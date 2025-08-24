@@ -1,0 +1,1548 @@
+/* 基礎樣式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* 主要容器樣式 */
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #050518 0%, #0a1a2e 100%);
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+/* 科技感背景效果 */
+.container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(0, 204, 255, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(0, 255, 198, 0.08) 0%, transparent 40%),
+    linear-gradient(90deg, rgba(0, 140, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(0, 140, 255, 0.05) 1px, transparent 1px);
+  background-size: 100%, 100%, 20px 20px, 20px 20px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 頭部樣式 */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.header-logo {
+  height: auto;
+  max-width: 200px;
+  filter: drop-shadow(0 0 15px rgba(0, 230, 255, 0.8));
+}
+
+/* 英雄區域樣式 */
+.hero-section {
+  position: relative;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 15px;
+  border: 2px solid rgba(0, 230, 255, 0.3);
+  box-shadow: 0 0 30px rgba(0, 230, 255, 0.5);
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(0, 230, 255, 0.7);
+  margin-bottom: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #00e2ff;
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+/* 節區塊樣式 */
+.section {
+  margin: 0 15px 25px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(1, 19, 36, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 230, 255, 0.2);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.section-header {
+  background: rgba(0, 20, 40, 0.8);
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0, 230, 255, 0.3);
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #00e2ff;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.section-title::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #00e2ff;
+  border-radius: 50%;
+  margin-right: 12px;
+  box-shadow: 0 0 10px rgba(0, 230, 255, 0.7);
+}
+
+.section-content {
+  padding: 20px;
+}
+
+/* 視頻容器樣式 */
+.video-container {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 230, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.video-container:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 14px;
+  background: linear-gradient(45deg, rgba(0, 230, 255, 0.5), transparent, rgba(0, 255, 198, 0.5));
+  z-index: -1;
+  animation: rotate 6s linear infinite;
+}
+
+/* 支付方式網格樣式 */
+.payment-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+  padding: 10px 0;
+}
+
+.payment-method {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 10px;
+  border-radius: 12px;
+  background: rgba(0, 230, 255, 0.05);
+  border: 1px solid rgba(0, 230, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-method:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 230, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 230, 255, 0.3);
+  border-color: rgba(0, 230, 255, 0.4);
+}
+
+.payment-method::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 230, 255, 0.1), transparent, rgba(76, 0, 255, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.payment-method:hover::before {
+  opacity: 1;
+}
+
+.payment-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  transition: all 0.3s ease;
+}
+
+.payment-method:hover .payment-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 15px rgba(0, 230, 255, 0.5));
+}
+
+.payment-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+
+/* 遊戲網格樣式 */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.game-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 230, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 230, 255, 0.3);
+}
+
+.game-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.game-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 20, 40, 0.8);
+  padding: 10px;
+  text-align: center;
+}
+
+.game-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #00e2ff;
+  margin-bottom: 5px;
+}
+
+/* 優勢列表樣式 */
+.advantage-list {
+  margin-top: 15px;
+}
+
+.advantage-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(0, 230, 255, 0.05);
+  border-left: 3px solid #00e2ff;
+  transition: all 0.3s ease;
+}
+
+.advantage-item:hover {
+  background: rgba(0, 230, 255, 0.1);
+}
+
+.advantage-icon {
+  margin-right: 15px;
+  background: rgba(0, 230, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #00e2ff;
+  flex-shrink: 0;
+  box-shadow: 0 0 15px rgba(0, 230, 255, 0.3);
+}
+
+.advantage-content {
+  flex: 1;
+}
+
+.advantage-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.advantage-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* 福利卡片樣式 */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.benefit-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(76, 0, 255, 0.3);
+}
+
+.benefit-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CTA按鈕樣式 */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 15px 30px;
+}
+
+.cta-btn {
+  display: block;
+  background: linear-gradient(90deg, #4c00ff, #8c52ff);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 18px 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(76, 0, 255, 0.4);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(76, 0, 255, 0.5);
+}
+
+.cta-btn:hover::before {
+  transform: translateX(100%);
+}
+
+/* 聯絡信息樣式 */
+.contact-info {
+  text-align: center;
+  margin: 0 15px 90px; /* 增加底部間距，為浮動按鈕留出空間 */
+  font-size: 1.1rem;
+  color: #ffffff;
+  background: rgba(10, 10, 40, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px dashed rgba(76, 0, 255, 0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-highlight {
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.3rem;
+  display: block;
+  margin-top: 10px;
+  text-shadow: 0 0 10px rgba(76, 0, 255, 0.7);
+}
+
+/* 浮動粒子效果 */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+/* 網格背景動畫 */
+.grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(76, 0, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(76, 0, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: -1;
+  animation: gridMove 20s linear infinite;
+}
+
+/* 底部圖標按鈕樣式 */
+.icon-buttons {
+  display: flex;
+  justify-content: flex-start; 
+  gap: 15px;
+  margin: 20px auto 40px;
+  position: relative;
+  z-index: 10;
+  padding-left: 30px;
+  max-width: 600px;
+}
+
+.icon-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+.icon-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.icon-wrapper {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.icon-btn svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 背景和發光效果 */
+.icon-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  z-index: 1;
+}
+
+.icon-btn::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, #4c00ff, #00e2ff, #8c52ff, #4c00ff);
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(4px);
+  animation: glowing 10s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 50%;
+}
+
+.icon-btn:hover::after {
+  opacity: 1;
+}
+
+/* 特定按鈕顏色 */
+.tg-icon {
+  background: linear-gradient(135deg, #2b5adf, #5682e9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tg-icon svg {
+  stroke: #ffffff;
+  fill: none;
+}
+
+.yt-icon {
+  background: linear-gradient(135deg, #ff0000, #ff5e5e);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.yt-icon svg {
+  stroke: #ffffff;
+  fill: none;
+}
+
+.line-icon {
+  background: linear-gradient(135deg, #06c755, #5eef9b);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.line-icon svg {
+  stroke: #ffffff;
+  fill: none;
+}
+
+/* 固定在右下角的吉祥物圖片按鈕 - 修改版本 */
+.fixed-mascot {
+  position: fixed !important; /* 強制使用固定定位 */
+  bottom: 20px !important; /* 強制底部位置 */
+  right: 15px !important; /* 強制右側位置 */
+  left: auto !important; /* 確保不受左側定位影響 */
+  top: auto !important; /* 確保不受頂部定位影響 */
+  z-index: 1000;
+  width: 120px; /* 縮小寬度 */
+  height: auto;
+  transform-origin: bottom right !important; /* 確保變形原點在右下角 */
+}
+
+.fixed-mascot img {
+  width: 100%;
+  height: auto;
+}
+
+/* 聯絡模態框樣式 */
+.contact-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  overflow: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.modal-content {
+  position: relative;
+  background: linear-gradient(135deg, #050518 0%, #0a1a2e 100%);
+  margin: 10vh auto;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(0, 230, 255, 0.5);
+  overflow: hidden;
+  transform: translateY(50px) scale(0.95);
+  transition: all 0.6s cubic-bezier(0.17, 0.84, 0.44, 1);
+  border: 1px solid rgba(0, 230, 255, 0.3);
+  animation: glowingBorder 4s infinite;
+}
+
+.modal-active .modal-content {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 20, 40, 0.8);
+  border-bottom: 1px solid rgba(0, 230, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(0, 230, 255, 0.2),
+    transparent,
+    rgba(76, 0, 255, 0.2),
+    transparent);
+  transform: translateX(-100%);
+  animation: headerGlow 8s linear infinite;
+}
+
+.modal-logo-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.modal-logo {
+  height: 40px;
+  filter: drop-shadow(0 0 10px rgba(0, 230, 255, 0.7));
+}
+
+.close-modal {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00e2ff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 230, 255, 0.1);
+}
+
+.close-modal:hover {
+  color: #fff;
+  background: rgba(0, 230, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 230, 255, 0.5);
+}
+
+.modal-body {
+  padding: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.modal-title {
+  color: #fff;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(0, 230, 255, 0.5);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.highlight-text {
+  color: #00e2ff;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight-text::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00e2ff, transparent);
+  animation: pulse 2s infinite;
+}
+
+.contact-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.contact-option {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: -1;
+}
+
+.contact-option::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, rgba(0, 230, 255, 0.5), transparent, rgba(76, 0, 255, 0.5));
+  z-index: -2;
+  filter: blur(10px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 15px;
+}
+
+.contact-option:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.contact-option:hover::after {
+  opacity: 1;
+}
+
+/* 聯絡選項樣式 */
+.telegram-option {
+  background: linear-gradient(135deg, rgba(43, 90, 223, 0.2), rgba(86, 130, 233, 0.1));
+}
+
+.youtube-option {
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.2), rgba(255, 94, 94, 0.1));
+}
+
+.line-option {
+  background: linear-gradient(135deg, rgba(6, 199, 85, 0.2), rgba(94, 239, 155, 0.1));
+}
+
+.telegram-vip-option {
+  background: linear-gradient(135deg, rgba(76, 0, 255, 0.2), rgba(140, 82, 255, 0.1));
+}
+
+.telegram-game-option {
+  background: linear-gradient(135deg, rgba(76, 0, 255, 0.2), rgba(140, 82, 255, 0.1));
+}
+
+.contact-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.telegram-option .contact-icon-wrapper {
+  background: linear-gradient(135deg, #2b5adf, #5682e9);
+  box-shadow: 0 0 15px rgba(43, 90, 223, 0.5);
+}
+
+.youtube-option .contact-icon-wrapper {
+  background: linear-gradient(135deg, #ff0000, #ff5e5e);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+}
+
+.line-option .contact-icon-wrapper {
+  background: linear-gradient(135deg, #06c755, #5eef9b);
+  box-shadow: 0 0 15px rgba(6, 199, 85, 0.5);
+}
+
+.telegram-vip-option .contact-icon-wrapper,
+.telegram-game-option .contact-icon-wrapper {
+  background: linear-gradient(135deg, #4c00ff, #8c52ff);
+  box-shadow: 0 0 15px rgba(76, 0, 255, 0.5);
+  position: relative;
+}
+
+.contact-icon-wrapper svg {
+  width: 20px;
+  height: 20px;
+  stroke: #fff;
+  fill: none;
+}
+
+.vip-badge, .game-badge {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  background: linear-gradient(135deg, #ff6b00, #ffb700);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(255, 107, 0, 0.5);
+}
+
+.contact-info-text h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.contact-info-text p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* QR碼部分 */
+.qr-code-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  border: 1px dashed rgba(0, 230, 255, 0.3);
+}
+
+.qr-title {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #00e2ff;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.qr-images {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-label {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.qr-image-placeholder {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.qr-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+/* 註冊橫幅樣式 */
+.register-banner {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(0, 230, 255, 0.1), rgba(76, 0, 255, 0.15));
+  border-radius: 15px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(0, 230, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.register-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(0, 230, 255, 0.2),
+    transparent,
+    rgba(76, 0, 255, 0.2),
+    transparent);
+  transform: translateX(-100%);
+  animation: bannerGlow 8s linear infinite;
+}
+
+.register-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00e2ff, #4c00ff);
+  border-radius: 50%;
+  margin-right: 15px;
+  box-shadow: 0 0 15px rgba(0, 230, 255, 0.5);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.register-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #fff;
+  fill: none;
+}
+
+.register-text {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.register-text h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.register-text p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.register-button {
+  background: linear-gradient(90deg, #4c00ff, #8c52ff);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 15px;
+  border-radius: 50px;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 0 5px 15px rgba(76, 0, 255, 0.3);
+  border: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.3s ease;
+  margin-left: 15px;
+  flex-shrink: 0;
+}
+
+.register-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(76, 0, 255, 0.5);
+}
+
+.register-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.register-button:hover::before {
+  transform: translateX(100%);
+}
+
+/* 爆炸粒子特效 */
+.explosion {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #00e2ff;
+  pointer-events: none;
+  z-index: 1999;
+  opacity: 0;
+}
+
+/* 模態框粒子效果 */
+.modal-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.modal-particle {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+/* 新增修改過的卡片按鈕樣式 */
+.card-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0 80px 15px; /* 底部增加更多間距，為固定TG圖片留出空間，左對齊 */
+  max-width: 50%; /* 寬度設為一半 */
+  padding: 0;
+  position: relative;
+  z-index: 10;
+}
+
+.card-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px; /* 減小內邊距 */
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.card-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.card-icon-wrapper {
+  width: 28px; /* 更小的圖標容器 */
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 7px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.card-icon-wrapper svg {
+  width: 16px; /* 更小的圖標 */
+  height: 16px;
+  stroke: #fff;
+  fill: none;
+}
+
+.card-text {
+  flex: 1;
+}
+
+.card-text h3 {
+  font-size: 0.95rem; /* 更小的標題文字 */
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 2px 0;
+}
+
+.card-text p {
+  font-size: 0.75rem; /* 更小的描述文字 */
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* 按鈕顏色樣式 */
+.youtube-card {
+  background: linear-gradient(135deg, #c00, #ff3333);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.youtube-card .card-icon-wrapper {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.line-card {
+  background: linear-gradient(135deg, #06c755, #07e060);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.line-card .card-icon-wrapper {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.telegram-card {
+  background: linear-gradient(135deg, #0088cc, #18a2e5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.telegram-card .card-icon-wrapper {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* 動畫效果 */
+.card-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.card-btn:hover::before {
+  transform: translateX(100%);
+}
+
+/* 新增修正的動畫 */
+@keyframes mascotIdleFixed {
+  0%, 20%, 50%, 80%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  }
+  5% {
+    transform: scale(1.05) rotate(3deg);
+    filter: drop-shadow(0 0 15px rgba(76, 0, 255, 0.7));
+  }
+  25% {
+    transform: scale(1.03) rotate(-2deg);
+    filter: drop-shadow(0 0 12px rgba(0, 230, 255, 0.6));
+  }
+  55% {
+    transform: scale(1.08) rotate(2deg);
+    filter: drop-shadow(0 0 20px rgba(0, 230, 255, 0.8));
+  }
+  85% {
+    transform: scale(1.04) rotate(-3deg);
+    filter: drop-shadow(0 0 15px rgba(76, 0, 255, 0.6));
+  }
+}
+
+@keyframes mascotBounceFixed {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  }
+  40% {
+    transform: translateY(-20px) scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(0, 230, 255, 0.8));
+  }
+  60% {
+    transform: translateY(-15px) scale(1.08);
+    filter: drop-shadow(0 0 18px rgba(76, 0, 255, 0.7));
+  }
+  80% {
+    transform: translateY(-5px) scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(0, 230, 255, 0.6));
+  }
+}
+
+@keyframes mascotShakeFixed {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: rotate(-5deg) scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(76, 0, 255, 0.6));
+  }
+  20%, 40%, 60%, 80% {
+    transform: rotate(5deg) scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(0, 230, 255, 0.6));
+  }
+}
+
+/* 原有動畫定義 */
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px);
+    opacity: 0.2;
+  }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px 30px;
+  }
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+@keyframes headerGlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(50%); }
+}
+
+@keyframes bannerGlow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(50%); }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+@keyframes modalFloat {
+  0% {
+    transform: translateY(100%) translateX(0) scale(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100%) translateX(20px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes glowingBorder {
+  0% { box-shadow: 0 0 25px rgba(0, 230, 255, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(76, 0, 255, 0.7); }
+  100% { box-shadow: 0 0 25px rgba(0, 230, 255, 0.5); }
+}
+
+@keyframes swing {
+  0% { transform: rotate(-5deg) scale(1.1); }
+  100% { transform: rotate(5deg) scale(1.1); }
+}
+
+/* 顯示模態框特效 */
+.modal-active {
+  display: block;
+  opacity: 1;
+}
+
+/* 響應式樣式 */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .games-grid, .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-methods-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 12px;
+  }
+
+  .payment-method {
+    padding: 12px 8px;
+  }
+
+  .payment-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .payment-label {
+    font-size: 0.8rem;
+  }
+
+  .advantage-item {
+    padding: 12px;
+  }
+
+  .advantage-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .section {
+    margin: 0 10px 20px;
+    border-radius: 12px;
+  }
+
+  .section-header {
+    padding: 12px 15px;
+  }
+
+  .section-content {
+    padding: 15px;
+  }
+
+  .icon-buttons {
+    gap: 12px;
+    padding-left: 25px;
+  }
+
+  .icon-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contact-info {
+    margin-bottom: 80px;
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .contact-highlight {
+    font-size: 1.2rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 5vh auto;
+  }
+
+  .contact-options {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .qr-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .payment-methods-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .payment-method {
+    padding: 10px 6px;
+  }
+
+  .payment-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .payment-label {
+    font-size: 0.75rem;
+  }
+
+  .icon-buttons {
+    gap: 10px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+  }
+
+  .icon-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .icon-wrapper {
+    width: 20px;
+    height: 20px;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+  }
+
+  .advantage-title {
+    font-size: 1rem;
+  }
+
+  .advantage-desc {
+    font-size: 0.85rem;
+  }
+
+  .contact-info {
+    margin-bottom: 75px;
+    font-size: 0.9rem;
+  }
+
+  .contact-highlight {
+    font-size: 1.1rem;
+  }
+
+  .register-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .register-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .register-text {
+    margin-bottom: 10px;
+  }
+
+  .register-button {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .modal-content {
+    margin: 3vh auto;
+  }
+
+  .modal-body {
+    padding: 15px;
+  }
+
+  .modal-title {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-info-text h3 {
+    font-size: 1rem;
+  }
+
+  .contact-info-text p {
+    font-size: 0.8rem;
+  }
+
+  .contact-icon-wrapper {
+    width: 35px;
+    height: 35px;
+  }
+
+  .contact-icon-wrapper svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .icon-buttons {
+    padding-left: 15px;
+  }
+
+  .icon-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-wrapper {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+.telegram-game-option, 
+a[href*="miru1788"], 
+a[data-link*="miru1788"] {
+  order: 1 !important;
+}
+
+.telegram-option, 
+a[href*="Gofun1788"], 
+a[data-link*="Gofun1788"] {
+  order: 2 !important;
+}
+
+.youtube-option, 
+a[href*="youtube"], 
+a[data-link*="youtube"] {
+  order: 3 !important;
+}
+
+.line-option, 
+a[href*="line.me"], 
+a[data-link*="line.me"] {
+  order: 4 !important;
+}

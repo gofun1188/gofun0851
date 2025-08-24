@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1043503911290639');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1043503911290639&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+    
+    <meta charset="UTF-8">
+    <title>GoFun - 全球華人首選 線上娛樂城</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* 调整按钮顺序 - 覆盖现有CSS */
+      .line-card,
+      a[href*="line.me"] {
+        order: 1 !important;
+      }
+
+      .card-btn[href*="Gofun1788"],
+      a[href*="Gofun1788"] {
+        order: 2 !important;
+      }
+
+      .card-btn[href*="miru1788"],
+      a[href*="miru1788"] {
+        order: 3 !important;
+      }
+
+      .whatsapp-card,
+      a[href*="wa.me"] {
+        order: 4 !important;
+      }
+
+      /* WhatsApp按鈕樣式 */
+      .whatsapp-card {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .whatsapp-card .card-icon-wrapper {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .whatsapp-card .card-icon-wrapper svg {
+        width: 16px;
+        height: 16px;
+        fill: #fff;
+      }
+
+      /* ===== 新增：頂部快速聯繫條 ===== */
+      .top-contact-bar {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background: linear-gradient(90deg, #00ffff, #0099cc);
+        padding: 8px 15px;
+        z-index: 1001;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0, 255, 255, 0.4);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .top-contact-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .top-contact-text {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #000;
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+      }
+
+      .top-contact-btn {
+        background: rgba(0, 0, 0, 0.15);
+        color: #000;
+        padding: 6px 20px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        text-decoration: none;
+      }
+
+      .top-contact-btn:hover {
+        background: rgba(0, 0, 0, 0.25);
+        transform: scale(1.05);
+        color: #000;
+      }
+
+      /* ===== 半屏廣告專用檢測和優化 ===== */
+      @media (max-height: 500px) {
+        .top-contact-bar {
+          padding: 6px 15px;
+        }
+
+        .top-contact-text {
+          font-size: 0.8rem;
+        }
+
+        .top-contact-btn {
+          padding: 4px 15px;
+          font-size: 0.8rem;
+        }
+
+        .header {
+          padding: 10px 0;
+        }
+
+        .header-logo {
+          max-width: 150px !important;
+        }
+
+        .hero-section {
+          margin-bottom: 15px;
+        }
+
+        .section {
+          margin: 0 10px 15px;
+        }
+      }
+
+      /* 响应式設計強化 */
+      @media (max-width: 768px) {
+        .top-contact-content {
+          flex-direction: row;
+          gap: 10px;
+        }
+
+        .top-contact-text {
+          font-size: 0.85rem;
+          flex: 1;
+        }
+      }
+
+      /* 小屏幕適配 */
+      @media (max-width: 480px) {
+        .top-contact-text {
+          font-size: 0.8rem;
+        }
+
+        .top-contact-btn {
+          padding: 5px 12px;
+          font-size: 0.8rem;
+        }
+      }
+
+      /* 超小屏幕適配 */
+      @media (max-width: 360px) {
+        .top-contact-content {
+          flex-direction: column;
+          gap: 5px;
+          text-align: center;
+        }
+
+        .top-contact-btn {
+          align-self: center;
+          width: auto;
+        }
+      }
+
+      /* 新增promo-text样式 */
+      .promo-text {
+        font-size: 1.05rem;
+        margin-bottom: 15px;
+        line-height: 1.4;
+        font-weight: 500;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        background: rgba(0, 229, 255, 0.05);
+        padding: 10px 15px;
+        border-radius: 8px;
+        border-left: 3px solid #00e5ff;
+        transition: all 0.3s ease;
+      }
+
+      .promo-text:last-child {
+        margin-bottom: 0;
+      }
+
+      .promo-text:before {
+        content: '»';
+        color: #00e5ff;
+        margin-right: 10px;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="top-contact-bar">
+      <div class="top-contact-content">
+        <div class="top-contact-text">🎮 GoFun - 立即領取150%新人優惠</div>
+        <a href="javascript:void(0);" class="top-contact-btn" id="topContactBtn">
+          快速領取
+        </a>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="particles" id="particles">
+
+      </div>
+
+      <div class="grid-background"></div>
+
+      <header class="header">
+        <img src="images/logo.png" alt="GoFun" class="header-logo">
+      </header>
+
+      <section class="hero-section">
+        <h1 class="hero-title">全球華人首選 線上娛樂城</h1>
+        <p class="hero-subtitle">體驗未來感娛樂平台，打造您的專屬數位遊戲體驗</p>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">活動助力 - 150% 超值優惠</h2>
+        </div>
+        <div class="section-content" style="padding-top: 15px;">
+          <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); margin: 10px 0 20px;">
+            <img src="images/axcop-aokk3.webp" alt="活動助力 - 150% 超值優惠" style="width: 100%; height: auto; display: block;">
+          </div>
+        </div>
+      </section>
+
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">多元儲值通道 火速上分</h2>
+  </div>
+  <div class="section-content">
+    <div class="payment-methods-grid">
+      <div class="payment-method">
+        <img src="images/支付/USDT.webp" alt="USDT" class="payment-icon">
+        <span class="payment-label">USDT</span>
+      </div>
+      <div class="payment-method">
+        <img src="images/支付/轉數快_white.png" alt="港幣" class="payment-icon">
+        <span class="payment-label">轉數快</span>
+      </div>
+      <div class="payment-method">
+        <img src="images/支付/IMG_5434.PNG" alt="匯旺" class="payment-icon">
+        <span class="payment-label">匯旺</span>
+      </div>
+      <div class="payment-method">
+        <img src="images/支付/ABA.png" alt="ABA" class="payment-icon">
+        <span class="payment-label">ABA</span>
+      </div>
+      <div class="payment-method">
+        <img src="images/支付/信用卡.png" alt="全球信用卡" class="payment-icon">
+        <span class="payment-label">全球信用卡</span>
+      </div>
+      <div class="payment-method">
+        <img src="images/支付/applepay.png" alt="Apple Pay" class="payment-icon">
+        <span class="payment-label">Apple Pay</span>
+      </div>
+      <div class="payment-method">
+        <img src="images/支付/ebpay.png" alt="EBpay" class="payment-icon">
+        <span class="payment-label">EBpay</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">出入金不限金額 秒入秒出 免實名 3秒登入</h2>
+  </div>
+  <div class="section-content">
+    <div class="video-container">
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/zwUYqscpPyA?playlist=zwUYqscpPyA&autoplay=1&mute=1&loop=1&controls=1&rel=0"
+        title="平台介紹"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+      <section class="section">
+        <div class="section-header">
+          <h3 class="section-title">TG頻道 內容豐富 每天互動</h3>
+        </div>
+        <div class="section-content" style="padding-top: 15px; text-align: center;">
+          <div class="video-container">
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/_Paq42wip5A?autoplay=1&mute=1&loop=1&playlist=_Paq42wip5A&controls=1&rel=0"
+              title="TG頻道內容豐富每天互動"
+              frameborder="0"
+              allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              playsinline>
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="section">
+        <div class="section-header">
+          <h3 class="section-title">百萬台幣大獎等你來領</h3>
+        </div>
+
+        <div class="section-content" style="padding-top: 15px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div class="video-container">
+              <iframe
+                width="100%"
+                height="315"
+                src="https://www.youtube.com/embed/msoCZyxzJf4?playlist=msoCZyxzJf4&autoplay=1&mute=1&loop=1&controls=1&rel=0"
+                title="雷神"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="video-container">
+              <iframe
+                width="100%"
+                height="315"
+                src="https://www.youtube.com/embed/LCGlUHNmI6g?playlist=LCGlUHNmI6g&autoplay=1&mute=1&loop=1&controls=1&rel=0"
+                title="幸運必"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<section class="section">
+  <div class="section-header">
+    <h3 class="section-title">台灣網美陪你玩百家 邊玩邊談戀愛</h3>
+  </div>
+  <div class="section-content" style="padding-top: 15px; text-align: center;">
+    <div class="video-container">
+      <iframe
+        width="100%"
+        height="315"
+        src="https://www.youtube.com/embed/uzOmVamdfmA?autoplay=1&mute=1&loop=1&playlist=uzOmVamdfmA&controls=1&rel=0"
+        title="台灣網美陪你玩百家"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        playsinline>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h3 class="section-title">你知道GoFun有多敢Fun嗎？</h3>
+  </div>
+
+  <div class="section-content" style="padding-top: 5px;">
+    <!-- 第一对：标题+图片 -->
+    <p class="promo-text">註冊天天免費抽！最高88888USDT</p>
+    <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); margin: 10px 0 20px;">
+      <img src="images/輪盤.jpg" alt="幸運輪盤" style="width: 100%; height: auto; display: block;">
+    </div>
+
+    <!-- 第二对：标题+图片 -->
+    <p class="promo-text">全網退水最高！1.2%天天返</p>
+    <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); margin: 10px 0 20px;">
+      <img src="images/反水.jpg" alt="Fun到你家淹水" style="width: 100%; height: auto; display: block;">
+    </div>
+
+    <!-- 第三对：标题+图片 -->
+    <p class="promo-text">每日續存大優惠</p>
+    <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); margin: 10px 0 20px;">
+      <img src="images/續存.webp" alt="每日續存大優惠" style="width: 100%; height: auto; display: block;">
+    </div>
+
+  </div>
+</section>
+
+<div class="card-buttons">
+  <a href="https://line.me/R/ti/p/@gofun1788" class="card-btn line-card">
+    <div class="card-icon-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+    </div>
+    <div class="card-text">
+      <h3>Line</h3>
+      <p>加入海川官方Line好友</p>
+    </div>
+  </a>
+
+  <a href="https://t.me/Gofun1788" class="card-btn telegram-card">
+    <div class="card-icon-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21.5 2l-19.5 9.5 7 2 10.5-9.5-8 11 4 2 6-15.5z"/>
+      </svg>
+    </div>
+    <div class="card-text">
+      <h3>聯繫TG</h3>
+      <p>24小時專人服務</p>
+    </div>
+  </a>
+
+  <a href="https://t.me/miru1788" class="card-btn telegram-card">
+    <div class="card-icon-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21.5 2l-19.5 9.5 7 2 10.5-9.5-8 11 4 2 6-15.5z"/>
+      </svg>
+    </div>
+    <div class="card-text">
+      <h3>TG頻道</h3>
+      <p>最新遊戲資訊與活動</p>
+    </div>
+  </a>
+
+  <a href="https://wa.me/85595469139" class="card-btn whatsapp-card">
+    <div class="card-icon-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.570-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.051 3.488"/>
+      </svg>
+    </div>
+    <div class="card-text">
+      <h3>WhatsApp</h3>
+      <p>即時聯繫客服</p>
+    </div>
+  </a>
+</div>
+
+      <a href="javascript:void(0);" class="fixed-mascot" id="mascotButton">
+        <img src="images/右下角固定tg.png" alt="吉祥物" style="width: 150px; height: auto;">
+      </a>
+
+      <div id="contactModal" class="contact-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="modal-logo-container">
+              <img src="images/logo.png" alt="GoFun Logo" class="modal-logo">
+            </div>
+            <span class="close-modal">&times;</span>
+          </div>
+          <div class="modal-body">
+            <h2 class="modal-title">聯絡海川 <span class="highlight-text">24/7 隨時為您服務</span></h2>
+
+            <div class="register-banner">
+              <div class="register-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <div class="register-text">
+                <h3>聯繫海川</h3>
+                <p>享受獨家優惠</p>
+              </div>
+              <a href="https://t.me/Gofun1788" class="register-button">立即聯繫</a>
+            </div>
+            <div class="contact-option line-option" data-link="https://line.me/R/ti/p/@gofun1788">
+              <div class="contact-icon-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <div class="contact-info-text">
+                <h3>Line</h3>
+                <p>加入官方Line好友</p>
+              </div>
+            </div>
+
+              <div class="contact-option youtube-option" data-link="https://www.youtube.com/@cgsd17888">
+                <div class="contact-icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                  </svg>
+                </div>
+                <div class="contact-info-text">
+                  <h3>YouTube</h3>
+                  <p>訂閱實況教學頻道</p>
+                </div>
+              </div>
+
+
+
+              <div class="contact-option telegram-game-option" data-link="https://t.me/miru1788">
+                <div class="contact-icon-wrapper">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21.5 2l-19.5 9.5 7 2 10.5-9.5-8 11 4 2 6-15.5z"/>
+                  </svg>
+                  <span class="game-badge">遊戲</span>
+                </div>
+                <div class="contact-info-text">
+                  <h3>TG遊戲頻道</h3>
+                  <p>最新遊戲資訊與活動</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // 地區檢測和鏈接分配
+      let regionLinks = {
+        china: 'https://97y.me/gJp5o',     // 柬埔寨/中國
+        other: 'https://97y.me/S6cLn'      // 其他地區
+      };
+
+      // 檢測用戶地區
+      async function detectUserRegion() {
+        try {
+          // 1. 優先使用IP地理位置服務檢測
+          const response = await fetch('https://ipapi.co/json/', {
+            timeout: 5000
+          });
+          
+          if (response.ok) {
+            const data = await response.json();
+            const country = data.country_code;
+            console.log('IP檢測到的國家:', country);
+            
+            // 檢查是否為中國或柬埔寨
+            if (country === 'CN' || country === 'KH') {
+              return 'china';
+            } else {
+              // IP檢測成功但不是中國/柬埔寨，直接返回其他地區
+              return 'other';
+            }
+          }
+        } catch (error) {
+          console.log('IP地理位置檢測失敗，嘗試其他方法:', error);
+        }
+
+        try {
+          // 2. 備用：檢查瀏覽器語言（僅限簡體中文和高棉語）
+          const language = navigator.language || navigator.userLanguage;
+          console.log('檢測到的語言:', language);
+          
+          // 只有簡體中文(zh-CN)或高棉語才判斷為china
+          if (language === 'zh-CN' || language.includes('km')) {
+            return 'china';
+          }
+        } catch (error) {
+          console.log('語言檢測失敗:', error);
+        }
+
+        try {
+          // 3. 備用：檢查時區
+          const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          console.log('檢測到的時區:', timezone);
+          
+          if (timezone.includes('Shanghai') || timezone.includes('Beijing') || 
+              timezone.includes('Phnom_Penh')) {
+            return 'china';
+          }
+        } catch (error) {
+          console.log('時區檢測失敗:', error);
+        }
+
+        // 4. 默認為其他地區
+        console.log('所有檢測方法都無法確定，默認為其他地區');
+        return 'other';
+      }
+
+      // 獲取對應地區的鏈接
+      function getRegionLink() {
+        return detectUserRegion().then(region => {
+          console.log('檢測到用戶地區:', region);
+          return regionLinks[region];
+        });
+      }
+
+      // 半屏廣告檢測
+      function detectHalfScreenAd() {
+        // 檢測視窗高度，如果太小可能是半屏廣告
+        if (window.innerHeight < 500) {
+          document.body.classList.add('half-screen-mode');
+
+          // 可以添加額外的半屏優化邏輯
+          console.log('檢測到可能的半屏廣告環境');
+
+          // 確保頂部聯繫條更加突出
+          const topBar = document.querySelector('.top-contact-bar');
+          if (topBar) {
+            topBar.style.background = 'linear-gradient(90deg, #ff6b00, #ff8c42)';
+            topBar.style.animation = 'pulse 2s infinite';
+          }
+        }
+      }
+
+      // 添加脈衝動畫
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes pulse {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.02); }
+          100% { transform: scale(1); }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // 設置頂部聯繫按鈕點擊事件
+      function setupTopContactButton() {
+        const topContactBtn = document.getElementById('topContactBtn');
+        if (topContactBtn) {
+          topContactBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('頂部聯繫按鈕被點擊');
+            
+            // 獲取地區鏈接並跳轉
+            getRegionLink().then(link => {
+              window.open(link, '_blank');
+            });
+          });
+        }
+      }
+
+      // 設置右下角固定TG圖片點擊事件
+      function setupMascotButton() {
+        const mascotBtn = document.getElementById('mascotButton');
+        if (mascotBtn) {
+          mascotBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('右下角TG圖片被點擊');
+            
+            // 獲取地區鏈接並跳轉
+            getRegionLink().then(link => {
+              window.open(link, '_blank');
+            });
+          });
+        }
+      }
+
+      // 初始化所有功能
+      document.addEventListener('DOMContentLoaded', function() {
+        setupTopContactButton();
+        setupMascotButton();
+        detectHalfScreenAd();
+        
+        // 預先檢測地區以提高響應速度
+        detectUserRegion().then(region => {
+          console.log('用戶地區已檢測:', region);
+        });
+      });
+
+      // 視窗大小改變時重新檢測
+      window.addEventListener('resize', detectHalfScreenAd);
+    </script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
