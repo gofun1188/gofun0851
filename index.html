@@ -488,7 +488,7 @@ src="https://www.facebook.com/tr?id=1349148973493713&ev=PageView&noscript=1"
   </a>
 </div>
 
-      <a href="javascript:void(0);" class="fixed-mascot" id="mascotButton" onclick="trackCompleteRegistration('右下角固定TG圖片')">
+      <a href="javascript:void(0);" class="fixed-mascot" id="mascotButton">
         <img src="images/右下角固定tg.png" alt="吉祥物" style="width: 150px; height: auto;">
       </a>
 
@@ -700,15 +700,24 @@ src="https://www.facebook.com/tr?id=1349148973493713&ev=PageView&noscript=1"
       function setupMascotButton() {
         const mascotBtn = document.getElementById('mascotButton');
         if (mascotBtn) {
-          mascotBtn.addEventListener('click', function(e) {
+          // 處理點擊事件
+          const handleClick = function(e) {
             e.preventDefault();
+            e.stopPropagation();
             console.log('右下角TG圖片被點擊');
-            
+
+            // 追踪事件
+            trackCompleteRegistration('右下角固定TG圖片');
+
             // 獲取地區鏈接並跳轉
             getRegionLink().then(link => {
-              window.open(link, '_blank');
+              window.location.href = link;
             });
-          });
+          };
+
+          // 同時綁定 click 和 touchend 事件以支援移動端
+          mascotBtn.addEventListener('click', handleClick);
+          mascotBtn.addEventListener('touchend', handleClick);
         }
       }
 
